@@ -8,11 +8,11 @@ module.exports = app => {
 
     async render(ctx) {
       const list = ctx.service.article.getList();
-      if (ctx.query.mode === 'ssr') {
-        await ctx.render('admin.js', { url: ctx.url, list });
-      } else {
-        await ctx.renderClient('admin.js', { url: ctx.url, list });
-      }
+      await ctx.render('admin.js', { url: ctx.url, list });
+      // if (ctx.query.mode === 'ssr') {
+      // } else {
+      //   await ctx.renderClient('admin.js', { url: ctx.url, list });
+      // }
     }
 
     async inspire() {

@@ -55,7 +55,9 @@ class KeplerMapContainer extends Component {
   render () {
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%' }}>
-        <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAccessToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
+        <ThemeProvider theme={theme}>
+          <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAcces sToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
+        </ThemeProvider>
       </div>
     );
   }
