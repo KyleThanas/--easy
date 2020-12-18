@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Provider } from 'react-redux';
+import KeplerMapContainer from './widgets/keplerMap'
+import store from './store/store';
 import './index.css';
 
 export default class ListIndex extends Component {
@@ -7,13 +10,10 @@ export default class ListIndex extends Component {
   }
 
   render() {
-    return <div>
-      <div className="login">
-        <div>
-          <h1>Welcome <a href="/">easy-react-admin</a>!</h1>
-          <h1>Welcome <a href="/">easy-react-admin</a>!</h1>
-        </div>
-      </div>
-    </div>;
+    return <Fragment>
+      <Provider store={store}>
+        <KeplerMapContainer />
+      </Provider>
+    </Fragment>
   }
 }
