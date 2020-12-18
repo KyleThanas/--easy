@@ -1,4 +1,4 @@
-import { createAction, handleActions } from 'redux-actions';
+import {createAction, handleActions} from 'redux-actions';
 
 // CONSTANTS
 export const INIT = 'INIT';
@@ -9,18 +9,18 @@ export const appInit = createAction(INIT);
 // INITIAL_STATE
 const initialState = {
   appName: 'example',
-  loaded: false,
+  loaded: false
 };
 
 // REDUCER
 const appReducer = handleActions(
   {
-    [INIT]: state => ({
+    [INIT]: (state, action) => ({
       ...state,
-      loaded: true,
-    }),
+      loaded: true
+    })
   },
-  initialState,
+  initialState
 );
 
 export default appReducer;

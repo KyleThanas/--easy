@@ -37,7 +37,9 @@ export default class Admin extends Component {
       )
     }
     const store = create(window.__INITIAL_STATE__)
+    console.log('store: ', store);
     const url = store.getState().url
+    console.log('url: ', url);
     return (
       <Provider store={store}>
         <BrowserRouter location={url}>

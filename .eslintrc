@@ -11,36 +11,23 @@
       "jsx": true
     }
   },
+  "parser": "babel-eslint",
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "new-cap": "off",
     "newline-after-var": "off",
     "no-invalid-this": "off",
-    "quotes": [
-      "error",
-      "single"
-    ],
+    "quotes": ["error", "single"],
     "guard-for-in": "off",
     "no-console": "off",
     "no-undefined": "off",
     "array-bracket-spacing": "off",
     "no-unused-expressions": "off",
     "linebreak-style": "off",
-    "func-style": [
-      "error",
-      "expression"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ]
+    "func-style": ["error", "expression"],
+    "comma-dangle": ["error", "never"]
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "globals": {
     "EASY_ENV_IS_PROD": true,
     "EASY_ENV_IS_NODE": true,

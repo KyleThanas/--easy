@@ -13,8 +13,10 @@ import galaxyData from '../data/galaxy-data.json';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoieGlhb25pdSIsImEiOiJjamsxNm9oczMwNzk4M3dsYmNsdjIxYm4xIn0.xaNqu5WkkTDwuBR2zk2M9Q'; // eslint-disable-line
 
 class KeplerMapContainer extends Component {
+  constructor(props) {
+    super(props)
+  }
   componentDidMount() {
-    console.log('----componentDidMount-----');
     const {
       config: { config: showConfig }
     } = configGalaxy;
@@ -34,6 +36,7 @@ class KeplerMapContainer extends Component {
     jsonToData.data.fields = useData.datasets[0].data.fields;
     jsonToData.data.rows = useData.datasets[0].data.allData;
 
+    const { dispatch } = this.props
     dispatch(
       wrapTo(
         'KeplerGlMap',
@@ -52,9 +55,7 @@ class KeplerMapContainer extends Component {
   render () {
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%' }}>
-        <ThemeProvider theme={theme}>
-          <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAccessToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
-        </ThemeProvider>
+        <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAccessToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
       </div>
     );
   }

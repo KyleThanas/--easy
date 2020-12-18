@@ -9,31 +9,34 @@ const customizedKeplerGlReducer = keplerGlReducer.initialState({
     mapControls: {
       ...uiStateUpdaters.DEFAULT_MAP_CONTROLS,
       visibleLayers: {
-        show: true,
+        show: true
       },
       mapLegend: {
         show: true,
-        active: true,
+        active: true
       },
       // 3D功能
       toggle3d: {
-        show: true,
+        show: true
       },
       // 分屏功能
       splitMap: {
-        show: false,
-      },
-    },
-  },
-  // mapId: 'keplerMap',
+        show: false
+      }
+    }
+  }
 });
 
 const reducers = combineReducers({
   keplerGl: customizedKeplerGlReducer,
-  app: appReducer,
+  app: appReducer
 });
 
 const middlewares = enhanceReduxMiddleware([]);
 const enhancers = [applyMiddleware(...middlewares)];
 
-export default createStore(reducers, {}, compose(...enhancers));
+// export default createStore(reducers, {}, compose(...enhancers));
+
+export const create = initalState => {
+  return createStore(reducers, initalState, compose(...enhancers));
+};

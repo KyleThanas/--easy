@@ -1,20 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
-import KeplerMapContainer from './widgets/keplerMap'
-import { create } from './store/store';
-
-import './index.css';
+import DemoApp from './app.js'
+import store from './store';
 
 export default class ListIndex extends Component {
   componentDidMount() {
   }
 
-  render () {
-    const store = create({})
+  render() {
     return <Provider store={store}>
       <Fragment>
-        <div>123123</div>
-        <KeplerMapContainer />
+        <DemoApp />
       </Fragment>
     </Provider>
   }

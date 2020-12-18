@@ -1,9 +1,9 @@
 
 module.exports = app => {
   return class AdminController extends app.Controller {
-    async login() {
+    async demo() {
       const { ctx } = this;
-      await ctx.renderClient('login.js', {});
+      await ctx.renderClient('demo.js', {});
     }
 
     async render(ctx) {

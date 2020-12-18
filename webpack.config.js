@@ -4,7 +4,7 @@ const publicPath = isProd ? '/inspire/' : '/public/';
 
 module.exports = {
   entry: {
-    login: 'app/web/page/login/index.jsx',
+    demo: 'app/web/page/demo/index.jsx',
     inspire: 'app/web/page/inspire/index.jsx',
     admin: 'app/web/page/admin/index.jsx'
   },
