@@ -15,6 +15,7 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoieGlhb25pdSIsImEiOiJjamsxNm9oczMwNzk4M3dsYmNsdjI
 class KeplerMapContainer extends Component {
   constructor(props) {
     super(props)
+    console.log('props: ', props);
   }
   componentDidMount() {
     const {
@@ -53,10 +54,11 @@ class KeplerMapContainer extends Component {
   }
 
   render () {
+    const store = this.props.storeKepler
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%' }}>
         <ThemeProvider theme={theme}>
-          <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAccessToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
+          <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAccessToken={MAPBOX_TOKEN} store={store} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
         </ThemeProvider>
       </div>
     );
@@ -67,9 +69,3 @@ const mapStateToProps = state => state;
 const dispatchToProps = dispatch => ({ dispatch });
 
 export default connect(mapStateToProps, dispatchToProps)(KeplerMapContainer);
-
-// <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAcces sToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
-// <ThemeProvider theme={theme}>
-//           <AutoSizer>{({ height, width }) => <KeplerGl mapboxApiAcces sToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />}</AutoSizer>
-//         </ThemeProvider>
-// <KeplerGl mapboxApiAcces sToken={MAPBOX_TOKEN} id="KeplerGlMap" width={width} height={height} />
